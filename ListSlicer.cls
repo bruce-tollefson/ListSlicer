@@ -32,7 +32,7 @@ public class ListSlicer {
      * @param Integer startSlicePoint - the integer value where the list should be split
      * @return List<sObject>
      */
-    public static List<Object> splitList(List<sObject> sObjList, Integer startSlicePoint) {
+    public static List<sObject> splitList(List<sObject> sObjList, Integer startSlicePoint) {
         checkSize(sObjList.size(), startSlicePoint);
         String sObjectListStr = JSON.serialize(sObjList);
         String sObjSplit = JSON.serialize(sObjectListStr.split('\\},\\{',startSlicePoint));
